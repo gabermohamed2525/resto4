@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>☕</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-serif-custom { font-family: 'Playfair Display', serif; }
+        .gold-gradient { background: linear-gradient(135deg, #F3D299 0%, #C89B67 50%, #A8763E 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-[#0F0E0C] text-[#E8E4DF] selection:bg-[#C89B67] selection:text-black">
+
+    <!-- Header Navigation -->
+    <header class="fixed w-full top-0 z-50 bg-[#0F0E0C]/90 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-[#C89B67]/10 border border-[#C89B67]/30 flex items-center justify-center text-[#C89B67] text-lg font-bold group-hover:bg-[#C89B67] group-hover:text-black transition-all">
+                    <i class="fa-solid fa-mug-hot"></i>
+                </div>
+                <span class="text-2xl font-bold font-serif-custom tracking-wider text-white">AURA<span class="text-[#C89B67]">.</span></span>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-xs tracking-widest uppercase font-semibold text-neutral-400">
+                <a href="index.html" class="hover:text-[#C89B67] transition-colors">Home</a>
+                <a href="menu.html" class="text-[#C89B67]">Menu</a>
+                <a href="reservation.html" class="hover:text-[#C89B67] transition-colors">Bookings</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/201025134834?text=Hello%20AURA!%20I%20would%20like%20to%20order%20from%20the%20menu." target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-[#C89B67] hover:bg-[#b08452] text-black font-bold text-xs uppercase tracking-widest px-6 py-3 rounded-full transition-all">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Order
+                </a>
+                <button id="mobile-menu-btn" class="md:hidden text-white text-xl p-2 focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#141311] border-b border-white/10 px-6 py-6 space-y-4 text-center text-xs tracking-widest uppercase font-semibold text-neutral-300">
+            <a href="index.html" class="block hover:text-[#C89B67]">Home</a>
+            <a href="menu.html" class="block text-[#C89B67]">Menu</a>
+            <a href="reservation.html" class="block hover:text-[#C89B67]">Bookings</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="pt-36 pb-24 max-w-6xl mx-auto px-6">
+        
+        <!-- Header Title -->
+        <div class="text-center mb-12">
+            <span class="text-[#C89B67] text-xs font-bold uppercase tracking-[0.3em] block mb-2">Artisan Selection</span>
+            <h1 class="text-4xl md:text-6xl font-serif-custom text-white">Food & Beverage Menu</h1>
+            <p class="text-neutral-400 text-xs md:text-sm max-w-lg mx-auto mt-4">Micro-lot single origins, fresh daily sourdough bakery, and all-day European bistro cuisine.</p>
+        </div>
+
+        <!-- Category Shortcut Pill Navigation -->
+        <div class="flex items-center justify-center gap-3 overflow-x-auto pb-6 mb-16 scrollbar-none text-xs tracking-wider uppercase font-semibold">
+            <a href="#coffee" class="bg-[#C89B67] text-black px-5 py-2.5 rounded-full whitespace-nowrap hover:scale-105 transition-all">☕ Coffee & Brews</a>
+            <a href="#cold-drinks" class="bg-[#181714] border border-white/10 hover:border-[#C89B67]/50 text-white px-5 py-2.5 rounded-full whitespace-nowrap transition-all">🥤 Cold & Mocktails</a>
+            <a href="#bakery" class="bg-[#181714] border border-white/10 hover:border-[#C89B67]/50 text-white px-5 py-2.5 rounded-full whitespace-nowrap transition-all">🥐 Bakery</a>
+            <a href="#brunch" class="bg-[#181714] border border-white/10 hover:border-[#C89B67]/50 text-white px-5 py-2.5 rounded-full whitespace-nowrap transition-all">🥑 Bistro Brunch</a>
+            <a href="#mains" class="bg-[#181714] border border-white/10 hover:border-[#C89B67]/50 text-white px-5 py-2.5 rounded-full whitespace-nowrap transition-all">🍽️ Main Plates</a>
+            <a href="#desserts" class="bg-[#181714] border border-white/10 hover:border-[#C89B67]/50 text-white px-5 py-2.5 rounded-full whitespace-nowrap transition-all">🍰 Sweets</a>
+        </div>
+
+        <div class="space-y-20">
+
+            <!-- Section 1: Specialty Brews -->
+            <div id="coffee" class="scroll-mt-36">
+                <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-8">
+                    <h2 class="text-2xl md:text-3xl font-serif-custom text-[#C89B67] flex items-center gap-3">
+                        <i class="fa-solid fa-mug-saucer text-xl"></i> Pour Over & Specialty Bar
+                    </h2>
+                    <span class="text-[10px] uppercase font-bold text-neutral-500 tracking-widest hidden sm:inline-block">Direct-Trade Single Origins</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-[9px] bg-[#C89B67]/20 text-[#C89B67] px-2 py-0.5 rounded font-bold uppercase tracking-widest inline-block mb-1">Signature</span>
+                                <h3 class="text-lg font-bold text-white">V60 Ethiopian Yirgacheffe</h3>
+                            </div>
+                            <span class="text-[#C89B67] font-bold text-base">160 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Single origin, light roast with delicate floral jasmine, bergamot & fresh peach notes.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-[9px] bg-[#C89B67]/20 text-[#C89B67] px-2 py-0.5 rounded font-bold uppercase tracking-widest inline-block mb-1">Rare Micro-lot</span>
+                                <h3 class="text-lg font-bold text-white">Panama Geisha Pour Over</h3>
+                            </div>
+                            <span class="text-[#C89B67] font-bold text-base">260 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Exotic flavor profile featuring wild honeysuckle, mango, and a silky tea-like finish.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-bold text-white">AURA Golden Flat White</h3>
+                            <span class="text-[#C89B67] font-bold text-base">130 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Double shot espresso blended with velvety texture microfoam and raw cane sugar rim.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-bold text-white">Madagascar Vanilla Cortado</h3>
+                            <span class="text-[#C89B67] font-bold text-base">125 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Equal parts double espresso and warm steamed milk infused with real Madagascar vanilla pod.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-bold text-white">Aeropress Colombian Pink Bourbon</h3>
+                            <span class="text-[#C89B67] font-bold text-base">175 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Full-bodied brew revealing tasting notes of pink grapefruit, caramel, and milk chocolate.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-bold text-white">Spanish Salted Latte</h3>
+                            <span class="text-[#C89B67] font-bold text-base">145 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Rich espresso, condensed milk, and a touch of sea salt served hot or over crystal ice blocks.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2: Cold Brews & Mocktails -->
+            <div id="cold-drinks" class="scroll-mt-36">
+                <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-8">
+                    <h2 class="text-2xl md:text-3xl font-serif-custom text-[#C89B67] flex items-center gap-3">
+                        <i class="fa-solid fa-[#C89B67] fa-glass-water text-xl"></i> Cold Refreshers & Botanical Mocktails
+                    </h2>
+                    <span class="text-[10px] uppercase font-bold text-neutral-500 tracking-widest hidden sm:inline-block">Zero-Proof Mixology</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-[9px] bg-[#C89B67]/20 text-[#C89B67] px-2 py-0.5 rounded font-bold uppercase tracking-widest inline-block mb-1">House Favorite</span>
+                                <h3 class="text-lg font-bold text-white">Yuzu Espresso Tonic</h3>
+                            </div>
+                            <span class="text-[#C89B67] font-bold text-base">150 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Double shot specialty espresso, Japanese Yuzu citrus extract, premium artisanal tonic water.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-[9px] bg-[#C89B67]/20 text-[#C89B67] px-2 py-0.5 rounded font-bold uppercase tracking-widest inline-block mb-1">Organic</span>
+                                <h3 class="text-lg font-bold text-white">Ceremonial Iced Matcha Latte</h3>
+                            </div>
+                            <span class="text-[#C89B67] font-bold text-base">170 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">First-harvest Uji Japanese green tea, organic almond milk, and raw agave nectar syrup.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-bold text-white">Slow-Steeped Nitro Cold Brew</h3>
+                            <span class="text-[#C89B67] font-bold text-base">140 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">24-hour cold steeped single origin coffee infused with nitrogen for a naturally sweet, Guinness-like cascade.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-bold text-white">Hibiscus & Wild Berry Spritz</h3>
+                            <span class="text-[#C89B67] font-bold text-base">135 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Brewed Egyptian hibiscus, fresh raspberries, mint sprigs, topped with sparkling water.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Artisan Bakery -->
+            <div id="bakery" class="scroll-mt-36">
+                <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-8">
+                    <h2 class="text-2xl md:text-3xl font-serif-custom text-[#C89B67] flex items-center gap-3">
+                        <i class="fa-solid fa-wheat-awn text-xl"></i> Freshly Baked Artisan Pastries
+                    </h2>
+                    <span class="text-[10px] uppercase font-bold text-neutral-500 tracking-widest hidden sm:inline-block">Baked Daily at 7:00 AM</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-[9px] bg-[#C89B67]/20 text-[#C89B67] px-2 py-0.5 rounded font-bold uppercase tracking-widest inline-block mb-1">Chef's Pick</span>
+                                <h3 class="text-lg font-bold text-white">Golden Pistachio Supreme Croissant</h3>
+                            </div>
+                            <span class="text-[#C89B67] font-bold text-base">190 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Laminated French butter pastry filled with roasted Bronte pistachio cream & crushed pistachios.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-bold text-white">Dark Chocolate Pain au Chocolat</h3>
+                            <span class="text-[#C89B67] font-bold text-base">135 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Flaky double-layered pastry stuffed with Valrhona 70% dark chocolate batons.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-bold text-white">Swedish Cardamom Bun</h3>
+                            <span class="text-[#C89B67] font-bold text-base">115 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Traditional twisted sourdough dough infused with freshly crushed green cardamom & pearl sugar.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-bold text-white">Smoked Turkey & Gruyère Danish</h3>
+                            <span class="text-[#C89B67] font-bold text-base">165 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Savory croissant tart topped with smoked turkey breast, melted Swiss Gruyère, and honey mustard glaze.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4: All-Day Bistro Kitchen -->
+            <div id="brunch" class="scroll-mt-36">
+                <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-8">
+                    <h2 class="text-2xl md:text-3xl font-serif-custom text-[#C89B67] flex items-center gap-3">
+                        <i class="fa-solid fa-egg text-xl"></i> All-Day Bistro Kitchen & Brunch
+                    </h2>
+                    <span class="text-[10px] uppercase font-bold text-neutral-500 tracking-widest hidden sm:inline-block">Served All Day</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-[9px] bg-[#C89B67]/20 text-[#C89B67] px-2 py-0.5 rounded font-bold uppercase tracking-widest inline-block mb-1">Bestseller</span>
+                                <h3 class="text-lg font-bold text-white">Truffle Avocado Sourdough</h3>
+                            </div>
+                            <span class="text-[#C89B67] font-bold text-base">340 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Poached organic farm eggs, mashed Hass avocado, black truffle oil drip, micro-greens on sourdough.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-bold text-white">Smoked Salmon Benedict</h3>
+                            <span class="text-[#C89B67] font-bold text-base">420 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Toasted house brioche, premium Norwegian smoked salmon, poached eggs, lemon hollandaise sauce & capers.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-bold text-white">Wild Mushroom Truffle Omelette</h3>
+                            <span class="text-[#C89B67] font-bold text-base">290 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Three organic eggs, sauteed chanterelle & cremini mushrooms, goat cheese, fresh thyme, and sourdough toast.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-bold text-white">Heirloom Burrata Tartine</h3>
+                            <span class="text-[#C89B67] font-bold text-base">360 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Fresh Italian Burrata cheese, roasted heirloom tomatoes, basil pesto drizzle, balsamic glaze on grilled country bread.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5: Main Plates -->
+            <div id="mains" class="scroll-mt-36">
+                <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-8">
+                    <h2 class="text-2xl md:text-3xl font-serif-custom text-[#C89B67] flex items-center gap-3">
+                        <i class="fa-solid fa-utensils text-xl"></i> Mains & Gourmet Sandwiches
+                    </h2>
+                    <span class="text-[10px] uppercase font-bold text-neutral-500 tracking-widest hidden sm:inline-block">Available 12:00 PM – Late</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-[9px] bg-[#C89B67]/20 text-[#C89B67] px-2 py-0.5 rounded font-bold uppercase tracking-widest inline-block mb-1">New</span>
+                                <h3 class="text-lg font-bold text-white">Slow-Braised Beef Rib Sandwich</h3>
+                            </div>
+                            <span class="text-[#C89B67] font-bold text-base">490 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">12-hour braised short rib, caramelized onions, aged cheddar, horseradish aioli in toasted sourdough brioche.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-bold text-white">Wild Mushroom Truffle Risotto</h3>
+                            <span class="text-[#C89B67] font-bold text-base">440 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Acquerello Carnaroli rice, porcini mushroom reduction, Parmigiano Reggiano 24 months, fresh truffle oil.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-bold text-white">Pan-Seared Salmon Fillet</h3>
+                            <span class="text-[#C89B67] font-bold text-base">560 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Crispy skin Atlantic salmon served over potato puree, grilled asparagus, and lemon butter caper sauce.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-bold text-white">Artisan Wagyu Bistro Burger</h3>
+                            <span class="text-[#C89B67] font-bold text-base">480 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">200g Australian Wagyu beef patty, truffle mayo, crispy shallots, smoked gouda cheese on homemade potato bun.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 6: Desserts -->
+            <div id="desserts" class="scroll-mt-36">
+                <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-8">
+                    <h2 class="text-2xl md:text-3xl font-serif-custom text-[#C89B67] flex items-center gap-3">
+                        <i class="fa-solid fa-cookie-bite text-xl"></i> Artisanal Sweets & Desserts
+                    </h2>
+                    <span class="text-[10px] uppercase font-bold text-neutral-500 tracking-widest hidden sm:inline-block">Night Dessert Pairings</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-[9px] bg-[#C89B67]/20 text-[#C89B67] px-2 py-0.5 rounded font-bold uppercase tracking-widest inline-block mb-1">Chef's Signature</span>
+                                <h3 class="text-lg font-bold text-white">Pistachio Basque Cheesecake</h3>
+                            </div>
+                            <span class="text-[#C89B67] font-bold text-base">230 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Burnt basque style creamy cheesecake with real pistachio paste, topped with warm white chocolate sauce.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-bold text-white">Valrhona Dark Chocolate Fondant</h3>
+                            <span class="text-[#C89B67] font-bold text-base">210 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Warm lava cake with molten chocolate center, served with a scoop of Tahitian vanilla bean gelato.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-bold text-white">Lotus Salted Caramel Tiramisu</h3>
+                            <span class="text-[#C89B67] font-bold text-base">195 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">House espresso-soaked ladyfingers layer with light mascarpone cream and salted caramel drizzle.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-[#181714] p-6 rounded-2xl border border-white/5 hover:border-[#C89B67]/30 transition-all">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-lg font-bold text-white">Classic Vanilla Crème Brûlée</h3>
+                            <span class="text-[#C89B67] font-bold text-base">180 EGP</span>
+                        </div>
+                        <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Rich custard base topped with a layer of hardened caramelized sugar and fresh berries.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- WhatsApp Direct Booking CTA Banner -->
+        <div class="mt-20 bg-gradient-to-r from-[#181714] via-[#221f1b] to-[#181714] border border-[#C89B67]/30 p-10 rounded-3xl text-center relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-[#C89B67]/10 rounded-full blur-2xl"></div>
+            <h3 class="text-2xl md:text-3xl font-serif-custom text-white mb-3">Planning a Visit or Private Gathering?</h3>
+            <p class="text-xs text-neutral-400 max-w-lg mx-auto mb-8">Reserve your table or order direct pickup through our dedicated concierge via WhatsApp.</p>
+            <a href="https://wa.me/201025134834?text=Hello%20AURA!%20I%20would%20like%20to%20reserve%20a%20table%20or%20place%20an%20order." target="_blank" class="inline-flex items-center gap-2 bg-[#C89B67] hover:bg-[#b08452] text-black font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-full transition-all">
+                <i class="fa-brands fa-whatsapp text-base"></i> Reserve via WhatsApp (01025134834)
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-[#0A0908] text-center text-xs text-neutral-500 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-white font-serif-custom text-2xl font-bold mb-2">AURA<span class="text-[#C89B67]">.</span></p>
+            <p class="text-neutral-400 mb-4 max-w-md mx-auto text-xs">Specialty Coffee • Artisan Bakery • All-Day European Bistro</p>
+            <p class="mb-2">Direct Contact & WhatsApp Bookings: <a href="https://wa.me/201025134834" class="text-[#C89B67] font-bold">01025134834</a></p>
+            <p class="text-[11px] text-neutral-600 mt-6">&copy; 2026 AURA Coffee & Bistro. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script for Mobile Navigation -->
+    <script>
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
